@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>Title: Jooyong Song Lab 4</title>
+    <link href="styles.css" rel="stylessheet">
+    <script>
+      function testFunction(){
+          fetch('/api')
+          .then((response) => response.text())
+          .then((response) => {
+                console.log(response);
+          })
+      }  
+    </script>
+</head>
+<body style="background-color:#CFA7F2;">
+  <style>
+    input.check{
+        width: 8px;
+        height: 8px;
+    }
+    .flex-outer li,
+    .flex-inner {
+        max-width: 800px;
+        padding: 0px 16px;
+        display: flex;
+        flex-wrap: wrap;  
+        align-items: center;
+    }
+    .flex-outer {
+        max-width: 800px;
+        padding: 0px 16px;
+    }
+    .flex-outer > li > label,
+    .flex-outer li p {
+        flex: 1 0 125px;
+        max-width: 225px;
+        padding: 8px;
+    }
+
+    .flex-outer > li > label + *,
+    .flex-inner {
+         flex: 1 0 225px;
+         max-width: 800px;
+         padding: 0px 16px;
+    }
+    .flex-outer li button {
+        margin-right: 10px;
+        margin-left: 0px;
+        padding: 6px 12px;
+        border: none;
+        background: #333;
+        color: #f2f2f2;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        border-radius: 3px;
+    }
+    .flex-inner li {
+        width: 95px;
+    }
+    .flex-inner {
+        justify-content: space-between;
+    }
+</style>
+    <h1>Jooyong Song's Lab 4</h1>
+
+    <form action="/api" method="post">
+        <ul class="flex-outer">
+          <li>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter your first name here" maxlength="140">
+          </li>
+          <li>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name here" maxlength="140">
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email here">
+          </li>
+          <li>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone here">
+          </li>
+          <li>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Enter your message here" rows="5" cols="33"></textarea>
+          </li>
+          <li>
+            <p>Age</p>
+            <ul class="flex-inner">
+                <li>
+                    <input type="checkbox" class="check" id="eighteen-to-thirtyfive" name="check1">
+                    <label for="eighteen-to-thirtyfive">18-35</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" class="check" id="thirtyfive-to-fifty" name="check2">
+                    <label for="thirtyfive-to-fifty">35-50</label>
+                  </li>
+                  <li>
+                      <input type="checkbox" class="check" id="fifty-to-sixtyfive" name="check3">
+                      <label for="fifty-to-sixtyfive">50-65</label>
+                  </li>
+                </ul>
+                    <li>
+                        <button type="submit" name="form button" id="submit">Submit</button>
+                    </li>   
+                    
+                    <li>
+                      <button type="button" onclick="testFunction()">Activate</button>
+                    </li>        
+            </ul>
+          </li>
+      </form>
+      function testFunction(){
+        fetch('/api')
+        .then((response) => response.text())
+        .then((response) => {
+              console.log(response);
+        })
+      }
+</body>
+</html>
