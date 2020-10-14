@@ -3,6 +3,7 @@
 /* eslint-disable no-unused-vars */
 import express from 'express';
 import dotenv from 'dotenv';
+import countries from './public/lab_6/countries.js'
 
 dotenv.config();
 
@@ -22,7 +23,7 @@ app.use((req, res, next) => {
 app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
-    res.send(`Lab 5 for Jooyong Song`);
+    res.json(countries)
   })
   .post((req, res) => {
     console.log('POST request detected');
