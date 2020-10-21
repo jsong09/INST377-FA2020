@@ -30,6 +30,14 @@ document.body.addEventListener('submit', async (e) => {
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
       // You're going to do your lab work in here. Replace this comment.
+      let tenCountries = []
+
+      let i;
+      for (i = 0; i < 10; i++) {
+        tenCountries.push('countryName');
+      }
+      console.log(tenCountries)
+
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
