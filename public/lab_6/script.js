@@ -1,5 +1,8 @@
 // You may wish to find an effective randomizer function on MDN.
 
+/*const { getJSON } = require("cypress/types/jquery");
+const { json } = require("express");*/
+
 function range(int) {
   const arr = [];
   for (let i = 0; i < int; i += 1) {
@@ -29,15 +32,23 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
-      let tenCountries = []
 
+      const tenNumbers = [];
+      const tenCountries =[];
       let i;
-      for (i = 0; i < 10; i++) {
-        tenCountries.push('countryName');
-      }
-      console.log(tenCountries)
 
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+
+      for (i = 0; i < 10; i++) {
+        tenNumbers.push(getRandomInt(countries.length-1));
+      }
+      for (i = 0; i < 10; i++) {
+        tenCountries.push(countries[tenNumbers[i]].name);
+      }
+            
+      
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));

@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
-    res.json(countries)
+    res.json(countries);
   })
   .post((req, res) => {
     console.log('POST request detected');
@@ -32,4 +32,21 @@ app.route('/api')
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
+
+  const tenNumbers = [];
+  const tenCountries =[];
+  let i;
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  for (i = 0; i < 10; i++) {
+    tenNumbers.push(getRandomInt(countries.length-1));
+  }
+  for (i = 0; i < 10; i++) {
+    tenCountries.push(countries[tenNumbers[i]].name);
+  }
+  console.log(tenNumbers);
+  console.log(tenCountries);
+
 });
