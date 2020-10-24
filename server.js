@@ -46,6 +46,9 @@ app.listen(port, () => {
   for (i = 0; i < 10; i++) {
     tenCountries.push(countries[tenNumbers[i]].name);
   }
+  tenCountries.sort();
+  tenCountries.reverse();
+
   console.log(tenNumbers);
   console.log(tenCountries);
 
