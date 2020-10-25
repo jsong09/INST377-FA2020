@@ -35,7 +35,8 @@ document.body.addEventListener('submit', async (e) => {
 
       const tenNumbers = [];
       const tenCountries =[];
-      let i;
+      const tenCodes =[];
+      let i, j, k;
 
       function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
@@ -44,14 +45,32 @@ document.body.addEventListener('submit', async (e) => {
       for (i = 0; i < 10; i++) {
         tenNumbers.push(getRandomInt(countries.length-1));
       }
-      for (i = 0; i < 10; i++) {
-        tenCountries.push(countries[tenNumbers[i]].name);
+      for (j = 0; j < 10; j++) {
+        tenCountries.push(countries[tenNumbers[j]].name);
+        tenCodes.push(countries[tenNumbers[j]].code);
       }
 
       tenCountries.sort();
       tenCountries.reverse();
-            
-      
+      tenCodes.sort();
+      tenCodes.reverse();
+
+      function listFunction() {
+        if (document.querySelector('.flex-inner')) {
+          document.querySelector('.flex-inner').remove();
+        }
+
+        const ul = document.createElement('ul');
+        ul.className ='.flex-inner';
+        $('form').prepend(ul);
+        
+        for (k = 0; k < 10; k++) {
+          const li = document.createElement('li');
+          $(li).append('<input type="checkbox" value=${tenCodes[k].code} id=${tenCodes[k].code} />');
+          $(li).append('<label for=${tenCodes[k].code}${tenCountries[k].name}</label>');
+          $(ul).append(li);
+        }
+      }
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
