@@ -74,20 +74,6 @@ document.body.addEventListener('submit', async (e) => {
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
-});
-function listFunction() {
-  if (document.querySelector('.flex-inner')) {
-    document.querySelector('.flex-inner').remove();
-  }
-
-  const ul = document.createElement('ul');
   ul.className ='.flex-inner';
-  $('form').prepend(ul);
-  
-  for (k = 0; k < 10; k++) {
-    const li = document.createElement('li');
-    $(li).append('<input type="checkbox" value=${tenCodes[k].code} id=${tenCodes[k].code} />');
-    $(li).append('<label for=${tenCodes[k].code}${tenCountries[k].name}</label>');
-    $(ul).append(li);
   }
-}
+});
