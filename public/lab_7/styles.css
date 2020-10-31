@@ -46,8 +46,20 @@ body {
 }
 
 .flex-outer button {
-  background-color: darkolivegreen;
-  color: white;
+  background-color: crimson;
+  color: grey;
+  padding: 6px 12px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-radius: 3px;
+  display: block;
+  margin: 0 auto;
+}
+
+submitButton {
+  background-color: crimson;
+  color: grey;
   padding: 6px 12px;
   border: none;
   text-transform: uppercase;
@@ -84,7 +96,7 @@ h1 {
   margin: 20px 50px;
   padding: 0 20px;
   min-height: 75px;
-  background-color: darkolivegreen;
+  background-color: crimson;
   color: white;
   display: flex;
   
@@ -105,4 +117,3 @@ h1 {
     width: 100%;
     margin-bottom: 15px;
 }
-

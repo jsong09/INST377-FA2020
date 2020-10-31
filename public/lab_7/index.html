@@ -6,17 +6,33 @@
     - Import script.js before your body closing tag
     - add a div with an id of chartContainer
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <html>
 <head>
-    <title>Title: </title>
-    <link href="styles.css" rel="stylessheet">
+    <title>Title: Jooyong Song Lab 7</title>
+    <link href="styles.css" rel="stylessheet" type="text/canvasjs">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
-    <h1>Jooyong Song Lab 7</h1>
+<div class="wrapper">
+    <div class="container flex-outer">
+        <div class="header">
+            <h1>Jooyong Song Lab 7</h1>
+        </div> 
+        <div id="chartContainer"></div>
+        <div>
+        <form>
+            <button
+            class="submitButton"
+            type="submit"
+            name="submitButton"
+            >Where should we eat?</button>
+        </form>
+        </div>
+    </div>
+</div>
+    <script src="canvasjs.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
