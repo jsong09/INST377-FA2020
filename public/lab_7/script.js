@@ -1,7 +1,7 @@
 function convertRestaurantsToCategories(restaurantList) {
   const chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
-    
+
     title:{
       text:"Fortune 500 Companies by Country"
     },
