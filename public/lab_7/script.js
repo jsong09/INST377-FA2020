@@ -79,6 +79,9 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
 function runThisWithResultsFromServer(jsonFromServer) {
   console.log('jsonFromServer', jsonFromServer);
   sessionStorage.setItem('restaurantList', JSON.stringify(jsonFromServer)); // don't mess with this, we need it to provide unit testing support
+  console.log(data);
+  console.log(json);
+  console.log('ooga');
   // Process your restaurants list
   // Make a configuration object for your chart
   // Instantiate your chart

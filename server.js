@@ -23,13 +23,17 @@ app.use((req, res, next) => {
 app.route('/api')
   .get(async (req, res) => {
     console.log('GET request detected');
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
-    console.log('Fetch request data', data);
+    console.log('Fetch request data', json);
   })
   .post(async (req, res) => {
     console.log('POST request detected');
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const json = await data.json();
+    res.json(json);
+    console.log('ooga');
   });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
+  console.log('ooga');
 });
