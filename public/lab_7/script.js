@@ -3,7 +3,7 @@ function convertRestaurantsToCategories(restaurantList) {
     animationEnabled: true,
 
     title:{
-      text:"Fortune 500 Companies by Country"
+      text:"Places to Eat Out in Future"
     },
     axisX:{
       interval: 1
@@ -11,11 +11,11 @@ function convertRestaurantsToCategories(restaurantList) {
     axisY2:{
       interlacedColor: "rgba(1,77,101,.2)",
       gridColor: "rgba(1,77,101,.1)",
-      title: "Number of Companies"
+      title: "Restaurants by Category"
     },
     data: [{
       type: "bar",
-      name: "companies",
+      name: "restaurants",
       axisYType: "secondary",
       color: "#014D65",
       dataPoints: [
@@ -65,13 +65,31 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
       gridColor: 'rgba(1,77,101,.1)',
       title: 'Change This Title',
       labelFontSize: 12,
-      scaleBreaks: {customBreaks: []} // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
+      scaleBreaks: {customBreaks: [{
+        startValue: 40,
+        endValue: 50,
+        color: "red",
+        type: "zigzag"
+      }, 
+      {
+        startValue: 85,
+        endValue: 100,
+        color: "blue",
+        type: "zigzag"
+      }, 
+      {
+        startValue: 140,
+        endValue: 175,
+        color: "green",
+         type: "zigzag"
+        }
+      ]} // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
     },
     data: [{
       type: 'bar',
       name: 'restaurants',
       axisYType: 'secondary',
-      dataPoints: datapointsFromRestaurantsList
+      dataPoints: data
     }]
   };
 }
