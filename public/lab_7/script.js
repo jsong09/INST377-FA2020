@@ -44,6 +44,13 @@ function convertRestaurantsToCategories(restaurantList) {
   return list;
 }
 
+async function loadData() {
+  const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+  const json = await data.json();
+  console.log(data);
+  console.log(json);
+}
+
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
   CanvasJS.addColorSet('customColorSet1', [
@@ -100,6 +107,7 @@ function runThisWithResultsFromServer(jsonFromServer) {
   console.log(data);
   console.log(json);
   console.log('ooga');
+  console.log(restaurantList);
   // Process your restaurants list
   // Make a configuration object for your chart
   // Instantiate your chart

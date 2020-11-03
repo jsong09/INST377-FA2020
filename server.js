@@ -30,10 +30,14 @@ app.route('/api')
     const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const json = await data.json();
     res.json(json);
-    console.log('ooga');
+    console.log('ooga123');
+    console.log(data);
+    console.log(json);
+    console.log(json.length)
+    console.log(json[2]);
+    console.log(json[2].establishment_id);
   });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
-  console.log('ooga');
 });
