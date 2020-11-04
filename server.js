@@ -30,18 +30,18 @@ app.route('/api')
     const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const json = await data.json();
     res.json(json);
-    console.log(json[1]);
 
     const categoryCount = new Map();
     let i;
     
     for(i = 0; i < json.length; i++) {
       if(categoryCount.has(json[i].category)) {
-        console.log(categoryCount.get(json[i].category));
+        categoryCount.set(categoryCount.get(json[i].category), categoryCount.get(json[i].category)+1);
       } else {
         categoryCount.set(json[i].category, 1);
       }
     }
+    console.log('OOGA');
     console.log(categoryCount);
 
   });
